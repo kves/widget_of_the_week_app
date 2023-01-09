@@ -8,16 +8,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          color: Colors.pink,
-          borderRadius: BorderRadius.circular(20),
-          backgroundBlendMode: BlendMode.hardLight,
+      // SafeArea https://www.youtube.com/watch?v=lkF0TQJO0bA
+
+      body: SafeArea(
+        minimum: EdgeInsets.all(20),
+        // Container
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.pink,
+            borderRadius: BorderRadius.circular(20),
+            backgroundBlendMode: BlendMode.hardLight,
+          ),
+          margin: EdgeInsets.all(30),
+          padding: const EdgeInsets.all(8),
+          transform: Matrix4.rotationZ(0.09),
+          child: const Text('This is container'),
         ),
-        margin: EdgeInsets.all(30),
-        padding: const EdgeInsets.all(8),
-        transform: Matrix4.rotationZ(0.09),
-        child: const Text('This is container'),
       ),
     );
   }
