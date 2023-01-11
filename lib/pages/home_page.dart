@@ -13,8 +13,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         minimum: EdgeInsets.all(20),
         // Column
-        child: ListView(
-          scrollDirection: Axis.horizontal,
+        child: Column(
           children: [
             // Container
             Container(
@@ -29,29 +28,32 @@ class HomePage extends StatelessWidget {
               child: const Text('This is container'),
             ),
             // ListView https://www.youtube.com/watch?v=KJpkjHGiI5A
-            Column(
-              children: [
-                Container(
-                  color: Colors.green,
-                  width: 30,
-                  height: 10,
-                ),
-                Container(
-                  color: Colors.red,
-                  width: 30,
-                  height: 10,
-                ),
-                Container(
-                  color: Colors.blue,
-                  width: 30,
-                  height: 10,
-                ),
-                Container(
-                  color: Colors.yellow,
-                  width: 30,
-                  height: 10,
-                ),
-              ],
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    color: Colors.red,
+                    width: 150,
+                    height: 5,
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    width: 150,
+                    height: 10,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    width: 150,
+                    height: 10,
+                  ),
+                  Container(
+                    color: Colors.yellow,
+                    width: 150,
+                    height: 10,
+                  ),
+                ],
+              ),
             )
           ],
         ),
